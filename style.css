@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  overflow: hidden;
 }
 
 .hero {
@@ -51,7 +52,7 @@ nav ul li a:hover {
   text-align: center;
 }
 .content h1 {
-  font-size: 160px;
+  font-size: 130px;
   color: #fff;
   font-weight: 600;
   transition: 0.5s;
@@ -66,6 +67,7 @@ nav ul li a:hover {
   padding: 14px 70px;
   border-radius: 50px;
   margin-top: 20px;
+  z-index: 1;
 }
 
 .content h1:hover {
@@ -73,13 +75,21 @@ nav ul li a:hover {
   color: transparent;
 }
 
+.content a:hover{
+  background-color: rgb(209, 227, 230);
+  color: black;
+  transition: 0.5s;
+  z-index: -1;
+}
 .video {
   position: absolute;
   right: 0;
   bottom: 0;
   z-index: -1;
-  /* width: 100vh; */
-  /* height: 800px; */
+  object-fit: cover;
+  width: 100%;
+  height: 800px;
+  display: flex;
 }
 .video1 {
   position: absolute;
@@ -100,6 +110,16 @@ nav ul li a:hover {
   /* height: 800px; */
 }
 
+.video3 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: none;
+  /* width: 100vh; */
+  /* height: 800px; */
+}
+
 /* MEDIA */
 @media (max-width: 991px) {
   html {
@@ -107,6 +127,7 @@ nav ul li a:hover {
   }
   .video {
     display: none;
+    flex-basis: 50%;
   }
 
   .video1 {
@@ -121,6 +142,7 @@ nav ul li a:hover {
   ul .navbar {
     width: 100%;
     padding: 3px;
+    font-size: 50px;
     display: flex;
     justify-content: start;
     flex-direction: column;
@@ -131,6 +153,7 @@ nav ul li a:hover {
     color: #fff;
     font-weight: 600;
     transition: 0.5s;
+    font-size: 80px;
   }
 
   .content a {
@@ -139,11 +162,18 @@ nav ul li a:hover {
     color: #fff;
     font-size: 14px;
     border: 2px solid #fff;
-    padding: 10s px 50px;
+    padding: 10px 50px;
     border-radius: 50px;
     margin-top: 20px;
+    
   }
 
+  .content a:hover{
+    background-color: rgb(209, 227, 230);
+    color: black;
+    transition: 0.5s;
+   
+  }
   nav {
     width: 100%;
     position: absolute;
@@ -172,7 +202,7 @@ nav ul li a:hover {
     font-size: 12px;
   }
 }
-@media (max-width: 734px) {
+@media (max-width: 765px) {
   .video {
     display: none;
   }
@@ -190,9 +220,6 @@ nav ul li a:hover {
     display: flex;
   }
 
-  .logo {
-    width: 100%;
-  }
   .content {
     font-size: 100px;
     padding-top: 5rem;
@@ -204,5 +231,50 @@ nav ul li a:hover {
     display: flex;
     justify-content: start;
     flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 534px) {
+  .video {
+    display: none;
+  }
+
+  .video1 {
+    display: none;
+  }
+  .video2 {
+    display: none;
+  }
+
+  ul .navbar {
+    width: 100%;
+    padding: 3px;
+    display: flex;
+    /* justify-content: start; */
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .video3 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    object-fit: cover;
+  }
+
+  .content h1 {
+    display: flex;
+    flex-direction: column;
+    font-size: 4rem;
+  }
+
+  .content a {
+    display: flex;
+    fl
   }
 }
